@@ -1,0 +1,167 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+
+	<script>
+		var saldo = 100.5; 
+		var transacoes = []; 
+
+		function inicio() {
+			var email = prompt('Digite seu e-mail:');
+			var senha = prompt('Digite sua senha:');
+			var nomeUsuario = prompt("Digite seu nome: ");
+
+			if (login(email, senha, nomeUsuario)) {
+				alert("Login efetuado com sucesso!");
+				alert("Olá " + nomeUsuario + ", é um prazer em ter você por aqui!");
+
+				menuOpcoes();
+			} else {
+				alert("E-mail ou senha inválidos!");
+				inicio();
+			}
+		}
+
+		function login(email, senha, nome) {
+			return (email === "a@b.com" && senha === "123" && nome);
+		}
+
+		function menuOpcoes() {
+			var escolha = parseInt(prompt('Selecione uma opção\n1.) Saldo\n2.) Extrato\n3.) Saque\n4.) Depósito\n5.) Transferência\n6.) Sair'));
+			switch (escolha) {
+				case 1:
+					verSaldo();
+					break;
+				case 2:
+					verExtrato();
+					break;
+				case 3:
+					fazerSaque();
+					break;
+				case 4:
+					fazerDeposito();
+					break;
+				case 5:
+					fazerTransferencia();
+					break;
+				case 6:
+					sair();
+					break;
+				default:
+					erro();
+					break;
+			}
+		}
+
+
+		function erro() {
+			alert('Opção inválida. Por favor, informe um número entre 1 e 6');
+			menuOpcoes();
+		}
+
+
+		function verSaldo() {
+			var senha = prompt('Para acessar o saldo, por favor, informe sua senha:');
+			if (senha === "123") {
+				alert('Seu saldo atual é: ' + saldo.toFixed(2));
+			} else {
+				alert('Senha incorreta. Acesso não autorizado.');
+			}
+			menuOpcoes();
+		}
+
+
+		function fazerDeposito() {
+			var deposito = parseFloat(prompt('Qual o valor para depósito?'));
+			if (isNaN(deposito) || deposito <= 0) {
+				alert('Valor de depósito inválido. Por favor, insira um valor positivo.');
+			} else {
+				saldo += deposito;
+				transacoes.push({ tipo: "Depósito", valor: deposito });
+				alert('Depósito realizado com sucesso. Seu saldo atual é: ' + saldo.toFixed(2));
+			}
+			menuOpcoes();
+		}
+
+		function fazerSaque() {
+			var senha = prompt('Para fazer um saque, por favor, informe sua senha:');
+			if (senha === "123") {
+				var saque = parseFloat(prompt('Qual o valor para saque?'));
+				if (isNaN(saque) || saque <= 0) {
+					alert('Valor de saque inválido. Por favor, insira um valor positivo.');
+				} else if (saque > saldo) {
+					alert('Operação não autorizada. Você não pode sacar mais do que tem em saldo.');
+				} else {
+					saldo -= saque;
+					transacoes.push({ tipo: "Saque", valor: saque });
+					alert('Saque realizado com sucesso. Seu saldo atual é: ' + saldo.toFixed(2));
+				}
+			} else {
+				alert('Senha incorreta. Acesso não autorizado.');
+			}
+			menuOpcoes();
+		}
+
+		function verExtrato() {
+			var extrato = "Extrato de transações:\n";
+			if (transacoes.length === 0) {
+				extrato += "Nenhuma transação realizada ainda.";
+			} else {
+				for (var i = 0; i < transacoes.length; i++) {
+					extrato += transacoes[i].tipo + ": " + transacoes[i].valor.toFixed(2) + "\n";
+				}
+			}
+			alert(extrato);
+			menuOpcoes();
+		}
+
+		function fazerTransferencia() {
+			var senha = prompt('Para fazer uma transferência, por favor, informe sua senha:');
+			if (senha === "123") {
+				var numeroConta = parseInt(prompt('Informe o número da conta de destino:'));
+				if (isNaN(numeroConta)) {
+					alert('Número de conta inválido. Por favor, informe um número válido.');
+					menuOpcoes();
+					return;
+				}
+
+				var valorTransferencia = parseFloat(prompt('Qual o valor da transferência?'));
+				if (isNaN(valorTransferencia) || valorTransferencia <= 0) {
+					alert('Valor de transferência inválido. Por favor, insira um valor positivo.');
+					menuOpcoes();
+					return;
+				}
+
+				if (valorTransferencia > saldo) {
+					alert('Operação não autorizada. Você não pode transferir mais do que tem em saldo.');
+				} else {
+					saldo -= valorTransferencia;
+					transacoes.push({ tipo: "Transferência para conta " + numeroConta, valor: valorTransferencia });
+					alert('Transferência realizada com sucesso. Seu saldo atual é: ' + saldo.toFixed(2));
+				}
+			} else {
+				alert('Senha incorreta. Acesso não autorizado.');
+			}
+			menuOpcoes();
+		}
+
+		function sair() {
+			var nomeUsuario = prompt("Digite seu nome: ");
+			alert(nomeUsuario + ", foi um prazer ter você por aqui!");
+		}
+
+		inicio();
+
+
+
+	</script>
+
+
+	<title></title>
+</head>
+
+<body>
+
+</body>
+
+</html>
