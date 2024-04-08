@@ -15,20 +15,23 @@
 - JavaScript
 - HTML
 
-## Instalação e Uso 👍
+## Instalação e Uso 🔧
 
 1. Abra o arquivo `index.html` em seu navegador web.
 2. Siga as instruções na tela para realizar as operações desejadas.
+  - Email de Login `a@b.com`
+  - Senha de Acesso `123`;
+  - Senha de Confirmação `123`;
 
-## Deploy
+## Deploy 👁‍🗨
 
-- Clique no Link para abrir o deploy da aplicação`index.html`.
+- Clique no Link para abrir o deploy da aplicação`https://ryanpicoli.github.io/Caixa-Eletronico/`.
 
-## Contribuição
+## Contribuição 👍
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir um pull request ou uma issue para sugestões de melhorias ou correções.
 
-## Licença
+## Licença 🧾
 
 Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
 
