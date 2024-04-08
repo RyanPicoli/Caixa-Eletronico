@@ -17,9 +17,12 @@
 
 ## Instalação e Uso 👍
 
-1. Clone este repositório: `git clone https://github.com/RynaPicoli/Caixa_Eletronico.git`
-2. Abra o arquivo `index.html` em seu navegador web.
-3. Siga as instruções na tela para realizar as operações desejadas.
+1. Abra o arquivo `index.html` em seu navegador web.
+2. Siga as instruções na tela para realizar as operações desejadas.
+
+## Deploy
+
+- Clique no Link para abrir o deploy da aplicação`index.html`.
 
 ## Contribuição
 
