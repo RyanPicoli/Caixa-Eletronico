@@ -1,8 +1,8 @@
-# Sistema Bancário Simples
+# Sistema Bancário Simples💸
 
-Um sistema bancário simples implementado em JavaScript, permitindo que os usuários façam operações básicas como verificar saldo, fazer depósitos e saques, transferências entre contas e visualizar o extrato de transações.
+🏧Um sistema bancário simples implementado em JavaScript, permitindo que os usuários façam operações básicas como verificar saldo, fazer depósitos e saques, transferências entre contas e visualizar o extrato de transações.
 
-## Funcionalidades
+## Funcionalidades 📝
 
 - Verificar saldo atual da conta.
 - Fazer depósitos na conta.
@@ -10,13 +10,14 @@ Um sistema bancário simples implementado em JavaScript, permitindo que os usuá
 - Transferir dinheiro para outra conta, com verificação de saldo suficiente.
 - Visualizar o extrato de transações realizadas na conta.
 
-## Tecnologias Utilizadas
+## Tecnologias Utilizadas 👨‍💻
 
 - JavaScript
+- HTML
 
-## Instalação e Uso
+## Instalação e Uso 👍
 
-1. Clone este repositório: `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
+1. Clone este repositório: `git clone https://github.com/RynaPicoli/Caixa_Eletronico.git`
 2. Abra o arquivo `index.html` em seu navegador web.
 3. Siga as instruções na tela para realizar as operações desejadas.
 
